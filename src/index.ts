@@ -3,7 +3,7 @@ import { join, resolve } from "node:path";
 const isDev = process.env.NODE_ENV !== "production";
 
 import express from "express";
-import type { Application, Router } from "express";
+import { type Application, Router } from "express";
 
 interface ReadFile {
   path: string;
@@ -58,3 +58,5 @@ export class Instance {
     return new Promise((resolve) => this.app.listen(port, () => resolve(port)));
   }
 }
+
+export { Router };
