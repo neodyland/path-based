@@ -1,4 +1,4 @@
-import { Instance } from "../../dist";
+import { Instance } from "../../";
 
 (async () => {
   const app = new Instance();
