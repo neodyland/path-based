@@ -51,7 +51,7 @@ export class Instance {
   async prepare(base?: string) {
     const paths = await getRoutesPath(base);
     paths.map(({ path, route }) =>
-      this.app.use(route, require(path).default as Router)
+      this.app.use(route, (require(path)?.default ?? require(path)) as Router)
     );
   }
   async listen(port: number = this.port) {
